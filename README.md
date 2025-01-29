@@ -190,7 +190,7 @@ Accounts in the Deposit Context:
 - user_lp: The user's LP token account. If it doesn't exist, it's initialized here. This account is mutable because new LP tokens are deposited here.
 - token_program, system_program, associated_token_program: Necessary programs for token transfers, account creation, and managing associated token accounts.
 
-###We then implement the deposit functionality for the Deposit context:
+### We then implement the deposit functionality for the Deposit context:
 ```rust
 impl<'info> Deposit<'info> {
     pub fn deposit (
@@ -285,7 +285,7 @@ Accounts in the Withdraw Context:
 - token_program, system_program, associated_token_program: Programs required for token operations, account management, and token burning.
 
 
-We then implement the withdraw functionality for the Withdraw context:
+### We then implement the withdraw functionality for the Withdraw context:
 
 ```rust
 pub fn withdraw(
@@ -424,7 +424,7 @@ This context setup ensures that the swap operation can be securely executed, mai
 - associated_token_program: Used to initialize the user's token accounts if they do not exist, ensuring proper token account management.
 - system_program: Required for creating or initializing accounts on Solana, including any new associated token accounts.
 
-###Then we implement some functionality for this context:
+### We then implement some functionality for this context:
 ```rust
 pub fn swap(&mut self, is_x: bool, amount: u64, min: u64) -> Result<()> {
     require!(self.config.locked == false, AmmError::PoolLocked);
