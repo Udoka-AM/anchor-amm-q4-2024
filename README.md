@@ -123,7 +123,7 @@ We basically just set the initial data of our LP Config account.
 
 ---
 
-U### sers will be able to deposit tokens into the liquidity pool:
+### Users will be able to deposit tokens into the liquidity pool:
 ```rust
 #[derive(Accounts)]
 pub struct Deposit<'info> {
@@ -272,6 +272,7 @@ impl<'info> Deposit<'info> {
 
 In this implementation we start by calculating the tokens to be deposited into the pool. In case of an empty pool, we use the arguments from the user. If the pool already contains tokens, we use the ConstantProduct::xy_deposit_amounts_from_l() function from an external crate to calculate the proportinate amount of tokens to deposit into the pool, while we control the slippage to protect the user.
 
+---
 
 ### Users can also withdraw tokens from the liquidity pool:
 Accounts in the Withdraw Context:
